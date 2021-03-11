@@ -1,8 +1,5 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const morgan = require('morgan');
-const path = require('path');
-const passport = require("./config/passport")
 const session = require("express-session")
 const cookieParser = require("cookie-parser")
 
