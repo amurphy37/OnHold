@@ -1,0 +1,40 @@
+{
+    "name": "smartrecruitersap",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specificed\" && exit 1",
+        "start": "node server.js",
+        "dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+        "client": "cd client && npm run start",
+        "install-client": "cd client && npm install",
+        "build": "cd client && npm run build",
+        "heroku-postbuild": "npm run install-client && npm run build"
+    },
+    "engines": {
+        "node": "15.4.0"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "0.19.2",
+        "bcryptjs": "2.4.3",
+        "concurrently": "5.3.0",
+        "cookie-parser": "^1.4.5",
+        "express": "4.17.1",
+        "express-session": "1.17.1",
+        "fs": "0.0.1-security",
+        "mongoose": "5.9.28",
+        "mongoose-findorcreate": "^3.0.0",
+        "morgan": "1.10.0",
+        "passport": "0.4.1",
+        "passport-local": "^1.0.0",
+        "path": "0.12.7",
+        "qs": "6.9.4"
+    },
+    "devDependencies": {
+        "nodemon": "2.0.4"
+    }
+}
