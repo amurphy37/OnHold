@@ -5,7 +5,7 @@
     "main": "server.js",
     "scripts": {
         "test": "echo \"Error: no test specificed\" && exit 1",
-        "start": "node app.js"
+        "start": "node server.js"
     },
     "engines": {
         "node": "15.4.0"
