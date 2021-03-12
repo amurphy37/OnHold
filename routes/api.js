@@ -23,6 +23,8 @@ router.post("/onHoldWebhook", async (req, res) => {
             }
         })
 
+        console.log(candidateInfo)
+
         if (candidateInfo.data.primaryAssignment.subStatus === "Eligibility Check") {
 
             const secondaryAssignments = candidateInfo.data.secondaryAssignments
@@ -32,16 +34,6 @@ router.post("/onHoldWebhook", async (req, res) => {
             }
             else {
                 console.log("more than one job")
-    
-                const candidateID = candidateInfo.data.id
-    
-                const fullURL = "https://api.smartrecruiters.com/candidates/" + candidateID
-        
-                const fullCandidateInfo = await Axios.get(fullURL, {
-                    headers: {
-                        "X-SmartToken": apiKey
-                    }
-                })
     
                 var isEligible = true
     
@@ -70,6 +62,8 @@ router.post("/onHoldWebhook", async (req, res) => {
                             }
                     })
 
+                    console.log(candidateUpdate)
+
 
     
                     // System then allows candidate to move forward in process and automatically puts candidate in ready to process status
@@ -93,6 +87,8 @@ router.post("/onHoldWebhook", async (req, res) => {
                                 "X-SmartToken": apiKey
                             }
                     })
+
+                    console.log(candidateUpdate)
                 }
         
             }
